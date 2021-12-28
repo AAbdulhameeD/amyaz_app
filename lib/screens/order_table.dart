@@ -12,7 +12,7 @@ class OrderTable extends StatelessWidget {
   String floorNumber;
   String mobileNumber;
   String phoneNumber;
-  OrderTable({
+  OrderTable({Key? key,
     required this.specialMark,
     required this.orderNumber,
     required this.status,
@@ -24,7 +24,7 @@ class OrderTable extends StatelessWidget {
     required this.floorNumber,
     required this.mobileNumber,
     required this.phoneNumber,
-});
+}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,9 +37,9 @@ class OrderTable extends StatelessWidget {
             children: [
               TableRow(children: [
                 firstColumnText('رقم الطلب'),
-                secondColumnText("$orderNumber"),
+                secondColumnText(orderNumber),
                 firstColumnText('الحالة'),
-                secondColumnText("$status"),
+                secondColumnText(status),
               ]),
               TableRow(
                   decoration: BoxDecoration(
@@ -47,9 +47,9 @@ class OrderTable extends StatelessWidget {
                   ),
                   children: [
                     firstColumnText('تاريخ الطلب'),
-                    secondColumnText("$orderDate"),
+                    secondColumnText(orderDate),
                     firstColumnText('اجمالى الطلب'),
-                    secondColumnText("$totalOrder"),
+                    secondColumnText(totalOrder),
                   ]),
             ],
           ),
@@ -70,15 +70,15 @@ class OrderTable extends StatelessWidget {
                   ),
                   children: [
                     firstColumnText('المدينة'),
-                    secondColumnText("$city"),
+                    secondColumnText(city),
                     firstColumnText('الشارع'),
-                    secondColumnText("$street"),
+                    secondColumnText(street),
                   ]),
               TableRow(children: [
                 firstColumnText('اسم/رقم العقار'),
-                secondColumnText("$buildingNumber"),
+                secondColumnText(buildingNumber),
                 firstColumnText('الطابق/رقم الشقة'),
-                secondColumnText("$floorNumber"),
+                secondColumnText(floorNumber),
               ]),
               TableRow(
                   decoration: BoxDecoration(
@@ -86,9 +86,9 @@ class OrderTable extends StatelessWidget {
                   ),
                   children: [
                     firstColumnText('رقم الهاتف'),
-                    secondColumnText("$phoneNumber"),
+                    secondColumnText(phoneNumber),
                     firstColumnText('المحمول'),
-                    secondColumnText("$mobileNumber"),
+                    secondColumnText(mobileNumber),
                   ]),
             ],
           ),
@@ -101,7 +101,7 @@ class OrderTable extends StatelessWidget {
             children: [
               TableRow(children: [
                 TableCell(child: firstColumnText('علامة مميزة')),
-                TableCell(child: firstColumnText('$specialMark')),
+                TableCell(child: firstColumnText(specialMark)),
               ]),
             ],
           ),
@@ -114,7 +114,7 @@ class OrderTable extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Text(
           text,
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: const TextStyle(fontWeight: FontWeight.bold),
         ),
       );
 
@@ -122,7 +122,7 @@ class OrderTable extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Text(
           text,
-          style: TextStyle(color: Colors.black),
+          style: const TextStyle(color: Colors.black),
         ),
       );
 }

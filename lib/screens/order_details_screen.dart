@@ -1,5 +1,4 @@
 import 'package:amyz_app/widgets/shared_widgets.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class OrderDetailsScreen extends StatelessWidget {
@@ -10,14 +9,14 @@ class OrderDetailsScreen extends StatelessWidget {
   String totalOrdersPrice;
   String orderImgUrl;
 
-  OrderDetailsScreen({
+  OrderDetailsScreen({Key? key,
     required this.orderNumber,
     required this.orderDate,
     required this.orderTitle,
     required this.orderStatus,
     required this.totalOrdersPrice,
     required this.orderImgUrl,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,14 +29,14 @@ class OrderDetailsScreen extends StatelessWidget {
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
+              children: const [
                 Text(
                   "رقم الطلب",
                 ),
                 Text("تاريخ الطلب")
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 5.0,
             ),
             Row(
@@ -45,15 +44,15 @@ class OrderDetailsScreen extends StatelessWidget {
               children: [
                 Text(
                   orderNumber,
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
                 Text(
                   orderDate,
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 5.0,
             ),
             separator(),
@@ -79,13 +78,13 @@ class OrderDetailsScreen extends StatelessWidget {
                             orderTitle,
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 5.0),
+                        const Padding(
+                          padding: EdgeInsets.only(top: 5.0),
                           child: Text(
                             "حالة الطلب",
                           ),
@@ -94,14 +93,14 @@ class OrderDetailsScreen extends StatelessWidget {
                           padding: const EdgeInsets.only(top: 5.0),
                           child: Text(
                             orderStatus,
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                            style: const TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
                         Row(
                           children: [
-                            Padding(
+                            const Padding(
                               padding:
-                                  const EdgeInsets.symmetric(horizontal: 3.0),
+                                  EdgeInsets.symmetric(horizontal: 3.0),
                               child: Text(
                                 'اجمالى الطلب:',
                                 style: TextStyle(color: Colors.red),
@@ -109,7 +108,7 @@ class OrderDetailsScreen extends StatelessWidget {
                             ),
                             Text(
                               totalOrdersPrice,
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                              style: const TextStyle(fontWeight: FontWeight.bold),
                             ),
                           ],
                         )

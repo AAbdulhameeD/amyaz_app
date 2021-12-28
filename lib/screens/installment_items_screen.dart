@@ -2,11 +2,13 @@ import 'package:amyz_app/widgets/shared_widgets.dart';
 import 'package:flutter/material.dart';
 
 class InstallmentItemsScreen extends StatelessWidget {
+  const InstallmentItemsScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
+        const SizedBox(
           height: 20.0,
         ),
         Padding(
@@ -19,15 +21,15 @@ class InstallmentItemsScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Row(
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.image,
                     color: Colors.red,
                   ),
                   defText('صورة البطاقة', fontSize: 16),
-                  Spacer(),
+                  const Spacer(),
                   DefaultTextButton(
                       btnText: 'تحميل', fontSize: 10, height: 35.0, width: 65.0),
-                  SizedBox(
+                  const SizedBox(
                     width: 65.0,
                   )
                 ],
@@ -35,7 +37,7 @@ class InstallmentItemsScreen extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20.0,
         ),
         Padding(
@@ -48,12 +50,12 @@ class InstallmentItemsScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Row(
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.image,
                     color: Colors.red,
                   ),
                   defText('صورة الكارنيه', fontSize: 16),
-                  Spacer(),
+                  const Spacer(),
                   DefaultTextButton(
                       btnText: 'تحميل', fontSize: 10, height: 35.0, width: 60.0),
                   DefaultTextButton(
@@ -63,7 +65,7 @@ class InstallmentItemsScreen extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20.0,
         ),
         Padding(
@@ -76,15 +78,15 @@ class InstallmentItemsScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Row(
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.image,
                     color: Colors.red,
                   ),
                   defText('صورة البطاقة', fontSize: 16),
-                  Spacer(),
+                  const Spacer(),
                   DefaultTextButton(
                       btnText: 'تحميل', fontSize: 10, height: 35.0, width: 65.0),
-                  SizedBox(
+                  const SizedBox(
                     width: 65.0,
                   )
                 ],

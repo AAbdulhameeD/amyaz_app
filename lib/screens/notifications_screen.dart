@@ -2,6 +2,8 @@ import 'package:amyz_app/widgets/shared_widgets.dart';
 import 'package:flutter/material.dart';
 
 class NotificationScreen extends StatelessWidget {
+  const NotificationScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
@@ -11,27 +13,27 @@ class NotificationScreen extends StatelessWidget {
   }
 }
 
-Widget notifyItem( notifyText, String ImgUrl) => Padding(
-      padding:  EdgeInsets.symmetric(vertical: 1.0),
-      child: Container(
+Widget notifyItem( notifyText, String imgUrl) => Padding(
+      padding:  const EdgeInsets.symmetric(vertical: 1.0),
+      child: SizedBox(
         width: double.infinity,
         child: Row(
           children: [
             Expanded(
               flex: 1,
               child: Image.network(
-                ImgUrl,
+                imgUrl,
                 fit: BoxFit.cover,
               ),
             ),
             Expanded(
               flex: 3,
               child: Padding(
-                padding:  EdgeInsets.symmetric(horizontal: 8.0),
+                padding:  const EdgeInsets.symmetric(horizontal: 8.0),
                 child: Text("$notifyText",
                   maxLines: 8,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 15.0,
                     wordSpacing: 0.4,
                   ),

@@ -1,7 +1,8 @@
-import 'package:amyz_app/widgets/shared_widgets.dart';
 import 'package:flutter/material.dart';
 
-class UplaodPhotoScreen extends StatelessWidget {
+class UploadPhotoScreen extends StatelessWidget {
+  const UploadPhotoScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,7 +23,7 @@ class UplaodPhotoScreen extends StatelessWidget {
               child: Row(
                 children: [
                   uploadPhotoBtn(btnTxt: 'الكاميرا', icon: Icons.camera_alt,onPressed: (){}),
-                  SizedBox(
+                  const SizedBox(
                     width: 5.0,
                   ),
                   uploadPhotoBtn(btnTxt: 'مكتبة الصور', icon: Icons.image_outlined,onPressed: (){}),
@@ -48,8 +49,8 @@ class UplaodPhotoScreen extends StatelessWidget {
                   icon,
                   color: Colors.white,
                 ),
-                SizedBox(width: 20.0,),
-                Text(btnTxt,style: TextStyle(color: Colors.white,fontSize: 14.0),)
+                const SizedBox(width: 20.0,),
+                Text(btnTxt,style: const TextStyle(color: Colors.white,fontSize: 14.0),)
               ],
             ),
           ),

@@ -13,7 +13,7 @@ class TotalOrderScreen extends StatelessWidget {
 
   String orderPrice;
 
-  TotalOrderScreen({
+  TotalOrderScreen({Key? key,
     required this.installmentMethod
     , required this.installmentPrice
     , required this.orderImgUrl,
@@ -21,7 +21,7 @@ class TotalOrderScreen extends StatelessWidget {
     required this.orderPayMethod,
     required this.orderPrice,
     required this.orderQuantity,
-  });
+  }) : super(key: key);
 
 
   @override
@@ -44,7 +44,7 @@ class TotalOrderScreen extends StatelessWidget {
             itemTitle,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
-            style: TextStyle(
+            style: const TextStyle(
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -61,7 +61,7 @@ class TotalOrderScreen extends StatelessWidget {
           border: TableBorder.all(color: Colors.grey.shade300),
           children: [
             TableRow(children: [
-              firstColumnText('السعر كاش'), secondColumnText('$orderPrice')
+              firstColumnText('السعر كاش'), secondColumnText(orderPrice)
             ]),
             TableRow(
                 decoration: BoxDecoration(
@@ -69,11 +69,11 @@ class TotalOrderScreen extends StatelessWidget {
                 ),
                 children: [
                   firstColumnText('الكمية'),
-                  secondColumnText('$orderQuantity'),
+                  secondColumnText(orderQuantity),
                 ]),
             TableRow(children: [
               firstColumnText('طريقة الدفع'),
-              secondColumnText('$orderPayMethod')
+              secondColumnText(orderPayMethod)
             ]),
             TableRow(
                 decoration: BoxDecoration(
@@ -85,7 +85,7 @@ class TotalOrderScreen extends StatelessWidget {
                 ]),
             TableRow(children: [
               firstColumnText('نظام التقسط'),
-              secondColumnText('$installmentMethod')
+              secondColumnText(installmentMethod)
             ]),
             TableRow(
                 decoration: BoxDecoration(
@@ -93,7 +93,7 @@ class TotalOrderScreen extends StatelessWidget {
                 ),
                 children: [
                   firstColumnText('القسط'),
-                  secondColumnText('$installmentPrice'),
+                  secondColumnText(installmentPrice),
                 ]),
           ],
         ),
@@ -104,14 +104,14 @@ class TotalOrderScreen extends StatelessWidget {
   Widget firstColumnText(String text) =>
       Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Text(text, style: TextStyle(fontWeight: FontWeight.bold),),
+        child: Text(text, style: const TextStyle(fontWeight: FontWeight.bold),),
       );
 
   Widget secondColumnText(String text) =>
       Padding(
         padding: const EdgeInsets.all(8.0),
         child: Text(text,
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.red),),
+          style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.red),),
       );
 
 }

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 
@@ -78,7 +77,7 @@ class DefaultTextFormField extends StatelessWidget {
 
   Function? showPassword;
 
-  DefaultTextFormField({
+  DefaultTextFormField({Key? key,
     this.controller,
     required this.inputType,
     this.fieldSubmitted,
@@ -91,7 +90,7 @@ class DefaultTextFormField extends StatelessWidget {
     this.suffix,
     this.isPassword = false,
     this.showPassword,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -116,7 +115,7 @@ class DefaultTextFormField extends StatelessWidget {
         obscureText: isPassword,
 
         decoration: InputDecoration(
-          border: OutlineInputBorder(),
+          border: const OutlineInputBorder(),
           contentPadding: EdgeInsets.symmetric(vertical: height),
           labelText: labelText,
           prefixIcon:prefix != null

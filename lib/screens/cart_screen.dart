@@ -1,8 +1,9 @@
 import 'package:amyz_app/widgets/shared_widgets.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CartScreen extends StatelessWidget {
+  const CartScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final mediaHeight = MediaQuery.of(context).size.height;
@@ -90,12 +91,12 @@ class CartScreen extends StatelessWidget {
                               children: [
                                 FloatingActionButton(
                                   onPressed: () {},
-                                  child: Icon(
+                                  child: const Icon(
                                     Icons.add,
                                     size: 15.0,
                                   ),
                                 ),
-                                Text(
+                                const Text(
                                   "1",
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
@@ -103,7 +104,7 @@ class CartScreen extends StatelessWidget {
                                 ),
                                 FloatingActionButton(
                                   onPressed: () {},
-                                  child: Icon(
+                                  child: const Icon(
                                     Icons.remove,
                                     size: 15.0,
                                   ),
@@ -154,7 +155,7 @@ class CartScreen extends StatelessWidget {
                             onPressed: () {},
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
+                              children: const [
                                 Icon(
                                   Icons.edit_outlined,
                                   color: Colors.red,

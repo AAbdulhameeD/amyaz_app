@@ -1,9 +1,9 @@
 import 'package:amyz_app/widgets/shared_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class InstallmentDetailsScreen extends StatefulWidget {
+  const InstallmentDetailsScreen({Key? key}) : super(key: key);
+
   @override
   State<InstallmentDetailsScreen> createState() =>
       _InstallmentDetailsScreenState();
@@ -26,21 +26,21 @@ class _InstallmentDetailsScreenState extends State<InstallmentDetailsScreen> {
           color: Colors.grey,
           child: Container(
             width: MediaQuery.of(context).size.width,
-            margin: EdgeInsets.only(top: 300.0),
-            decoration: BoxDecoration(
+            margin: const EdgeInsets.only(top: 300.0),
+            decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(25),
                   topRight: Radius.circular(25),
                 )),
             child: SingleChildScrollView(
-              physics: BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 18.0),
                 child: Column(
                   children: [
                     Row(children: [
-                      Icon(
+                      const Icon(
                         Icons.credit_card,
                         size: 18.0,
                         color: Colors.grey,
@@ -54,7 +54,7 @@ class _InstallmentDetailsScreenState extends State<InstallmentDetailsScreen> {
                           child: DefaultTextFormField(
                               labelText: "", inputType: TextInputType.text)),
                     ]),
-                    SizedBox(
+                    const SizedBox(
                       height: 10.0,
                     ),
                     Row(children: [
@@ -64,10 +64,10 @@ class _InstallmentDetailsScreenState extends State<InstallmentDetailsScreen> {
                           child: DefaultTextFormField(
                               labelText: "", inputType: TextInputType.number)),
                     ]),
-                    SizedBox(
+                    const SizedBox(
                       height: 10.0,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10.0,
                     ),
                     Row(children: [
@@ -81,7 +81,7 @@ class _InstallmentDetailsScreenState extends State<InstallmentDetailsScreen> {
                             items: ['تاجر', 'الصيادلة'],
                           )),
                     ]),
-                    SizedBox(
+                    const SizedBox(
                       height: 10.0,
                     ),
                     Row(children: [
@@ -95,7 +95,7 @@ class _InstallmentDetailsScreenState extends State<InstallmentDetailsScreen> {
                               dialogHeader: 'المدينة',
                               items: ['a', 'b'])),
                     ]),
-                    SizedBox(
+                    const SizedBox(
                       height: 10.0,
                     ),
                     DefaultTextButton(btnText: "حفظ البيانات", width: 170.0),
@@ -135,7 +135,7 @@ class _InstallmentDetailsScreenState extends State<InstallmentDetailsScreen> {
                               child: Center(
                                   child: Text(
                                     dialogHeader,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         fontSize: 18.0,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.white),
@@ -144,7 +144,7 @@ class _InstallmentDetailsScreenState extends State<InstallmentDetailsScreen> {
                                   borderRadius: BorderRadius.circular(10.0),///TODO
                                   color: Colors.red),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 20.0,
                             ),
                             Container(
@@ -152,20 +152,20 @@ class _InstallmentDetailsScreenState extends State<InstallmentDetailsScreen> {
                               width: double.infinity,
                               color: Colors.grey.shade200,
                               child: Padding(
-                                padding: EdgeInsets.all(15.0),
+                                padding: const EdgeInsets.all(15.0),
                                 child: Container(
                                   height: 22,
                                   color: Colors.grey.shade100,
                                 ),
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 20.0,
                             ),
                             Expanded(
                               child: ListView.separated(
                                   itemBuilder: (context, index) => GestureDetector(
-                                    child: Container(
+                                    child: SizedBox(
                                         height: 39.0,
                                         child: Padding(
                                           padding: const EdgeInsets.symmetric(
@@ -175,7 +175,7 @@ class _InstallmentDetailsScreenState extends State<InstallmentDetailsScreen> {
                                                 vertical: 6.0),
                                             child: Text(
                                               items[index],
-                                              style: TextStyle(fontSize: 18.0),
+                                              style: const TextStyle(fontSize: 18.0),
                                             ),
                                           ),
                                         )),
@@ -208,9 +208,9 @@ class _InstallmentDetailsScreenState extends State<InstallmentDetailsScreen> {
                 Expanded(
                     child: Text(
                   _selectedJob,
-                  style: TextStyle(fontSize: 20.0, color: Colors.black),
+                  style: const TextStyle(fontSize: 20.0, color: Colors.black),
                 )),
-                Icon(
+                const Icon(
                   Icons.arrow_drop_down,
                   color: Colors.black,
                 )

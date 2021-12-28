@@ -1,15 +1,5 @@
-import 'package:amyz_app/screens/Installment_details_screen.dart';
 import 'package:amyz_app/screens/cart_screen.dart';
-import 'package:amyz_app/screens/compare_screen.dart';
-import 'package:amyz_app/screens/contact_us_screen.dart';
-import 'package:amyz_app/screens/favourites_screen.dart';
-import 'package:amyz_app/screens/installment_items_screen.dart';
-import 'package:amyz_app/screens/notifications_screen.dart';
-import 'package:amyz_app/screens/order_details_screen.dart';
-import 'package:amyz_app/screens/order_table.dart';
-import 'package:amyz_app/screens/pay_screen.dart';
-import 'package:amyz_app/screens/total_orders_screen.dart';
-import 'package:amyz_app/screens/upload_photo_screen.dart';
+
 
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
@@ -19,7 +9,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 void main() {
   runApp ( DevicePreview(
       enabled: !kReleaseMode,
-      builder: (context) => MyApp(), // Wrap your app
+      builder: (context) => const MyApp(), // Wrap your app
   ));
 }
 
@@ -71,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body:CartScreen()
+      body:const CartScreen()
     );
   }
 }

@@ -2,13 +2,15 @@ import 'package:amyz_app/widgets/shared_widgets.dart';
 import 'package:flutter/material.dart';
 
 class ContactUsScreen extends StatelessWidget {
+  const ContactUsScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Container(
           width: double.infinity,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(10.0),
               bottomRight: Radius.circular(10.0),
@@ -31,15 +33,15 @@ class ContactUsScreen extends StatelessWidget {
                           socialBtn(img: 'assets/youtube.png', onTap: () {}),
                         ],
                       ))),
-              SizedBox(
+              const SizedBox(
                 height: 25.0,
               ),
               defText('التليفون : 6897', fontSize: 16.0),
-              SizedBox(
+              const SizedBox(
                 height: 5.0,
               ),
               defText('البريد الالكتروني : info@amyz.com', fontSize: 16.0),
-              SizedBox(
+              const SizedBox(
                 height: 5.0,
               ),
               DefaultTextButton(
@@ -49,7 +51,7 @@ class ContactUsScreen extends StatelessWidget {
         ),
         Expanded(
             child: SingleChildScrollView(
-              physics: BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
           child: Padding(
             padding: const EdgeInsets.only(
                 bottom: 12.0),
@@ -74,7 +76,7 @@ class ContactUsScreen extends StatelessWidget {
                     ))
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30.0,
                 ),
                 Padding(
@@ -87,7 +89,7 @@ class ContactUsScreen extends StatelessWidget {
                     validate: () {},
                     labelText: '',
                     prefix: Icons.person),
-                SizedBox(height: 15.0,),
+                const SizedBox(height: 15.0,),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: defText('البريد الالكتروني',
@@ -98,7 +100,7 @@ class ContactUsScreen extends StatelessWidget {
                     validate: () {},
                     labelText: '',
                     prefix: Icons.email),
-                SizedBox(height: 15.0,),
+                const SizedBox(height: 15.0,),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: defText('الهاتف',
@@ -108,7 +110,7 @@ class ContactUsScreen extends StatelessWidget {
                     inputType: TextInputType.text,
                     validate: () {},
                     labelText: '',
-                    prefix: Icons.phone_android), SizedBox(height: 15.0,),
+                    prefix: Icons.phone_android), const SizedBox(height: 15.0,),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: defText('الرسالة',
@@ -120,7 +122,7 @@ class ContactUsScreen extends StatelessWidget {
                     validate: () {},
                     labelText: '',
                     prefix: Icons.message),
-                SizedBox(height: 15.0,),
+                const SizedBox(height: 15.0,),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: DefaultTextButton(btnText: 'ارسال', width: 120.0,height: 50.0),
@@ -149,7 +151,7 @@ class ContactUsScreen extends StatelessWidget {
               ),
               radius: 14.0,
             ),
-            SizedBox(
+            const SizedBox(
               width: 20,
             ),
           ],

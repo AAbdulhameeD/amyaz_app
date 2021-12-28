@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 final Map<int, Color> greyColor = {
-  50: Color(0xFFFFD7C2),
+  50: const Color(0xFFFFD7C2),
   100: Colors.grey[100]!,
   200: Colors.grey[200]!,
   300: Colors.grey[300]!,

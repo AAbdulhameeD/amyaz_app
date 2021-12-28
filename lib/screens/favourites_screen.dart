@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class FavouritesScreen extends StatelessWidget {
+  const FavouritesScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -13,12 +15,12 @@ class FavouritesScreen extends StatelessWidget {
   }
 }
 
-Widget favItem(favHeader, String ImgUrl, installment, cash) => Row(
+Widget favItem(favHeader, String imgUrl, installment, cash) => Row(
   children: [
     Expanded(
       flex: 1,
       child: Image.network(
-        ImgUrl,
+        imgUrl,
         fit: BoxFit.cover,
       ),
     ),
@@ -64,14 +66,14 @@ Widget favItem(favHeader, String ImgUrl, installment, cash) => Row(
                     btnText: 'تقسيط',
                     color: Colors.red,
                     width: 90.0),
-                Spacer(),
+                const Spacer(),
                 defText('$installment ج.م')
               ],
             ),
             separator(),
             Row(
               children: [
-                Icon(Icons.favorite,color:Colors.red),
+                const Icon(Icons.favorite,color:Colors.red),
                 const SizedBox(width: 15.0,),
                 Expanded(
                   child: RatingBar.builder(
