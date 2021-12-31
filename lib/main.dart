@@ -1,4 +1,8 @@
+import 'package:amyz_app/screens/Installment_details_screen.dart';
+import 'package:amyz_app/screens/add_adress_screen.dart';
+import 'package:amyz_app/screens/address_screen.dart';
 import 'package:amyz_app/screens/cart_screen.dart';
+import 'package:amyz_app/screens/contact_us_screen.dart';
 
 
 import 'package:device_preview/device_preview.dart';
@@ -61,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body:const CartScreen()
+      body: AddressScreen()
     );
   }
 }

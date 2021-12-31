@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-
 Widget defText(String text,
-    {double fontSize = 15, color = Colors.black, padding = 8.0}) =>
+        {double fontSize = 15, color = Colors.black, padding = 8.0}) =>
     Padding(
       padding: EdgeInsets.all(padding),
       child: Text(
@@ -17,30 +16,39 @@ Widget separator() => Container(
     width: double.infinity,
     height: 1.0,
     color: Colors.grey.shade300);
+
 // ignore: must_be_immutable
 class DefaultTextButton extends StatelessWidget {
   String btnText;
   double width;
   double fontSize;
   Function? onPressed;
-  MaterialColor color ;
-  double height ;
+  MaterialColor color;
+
+  double height;
+
+  double borderRadius;
 
   DefaultTextButton(
-      {Key? key, required this.btnText,
+      {Key? key,
+      required this.btnText,
       this.width = double.infinity,
       this.fontSize = 20,
-        this.onPressed,
+      this.onPressed,
+      this.borderRadius = 1.0,
       this.color = Colors.red,
-      this.height = 80.0}) : super(key: key);
+      this.height = 80.0})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
-
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(borderRadius),
+        color: color,
+      ),
       height: height,
-      color: color,
       width: width,
       child: TextButton(
         onPressed: () {
@@ -58,9 +66,6 @@ class DefaultTextButton extends StatelessWidget {
   }
 }
 
-
-
-
 class DefaultTextFormField extends StatelessWidget {
   TextEditingController? controller;
   TextInputType inputType;
@@ -71,20 +76,24 @@ class DefaultTextFormField extends StatelessWidget {
   IconData? prefix;
   Function? onTappedTextForm;
   double height;
-
+  dynamic color;
+  double? padding;
   IconData? suffix;
   bool isPassword;
 
   Function? showPassword;
 
-  DefaultTextFormField({Key? key,
+  DefaultTextFormField({
+    Key? key,
     this.controller,
+    this.padding = 15.0,
     required this.inputType,
     this.fieldSubmitted,
     this.validate,
     required this.labelText,
     this.onChanged,
     this.prefix,
+    this.color,
     this.onTappedTextForm,
     this.height = 50.0,
     this.suffix,
@@ -95,8 +104,9 @@ class DefaultTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: color,
       height: height,
-      padding: const EdgeInsets.symmetric(horizontal: 15.0),
+      padding: EdgeInsets.symmetric(horizontal: padding!),
       child: TextFormField(
         keyboardType: inputType,
         //controller: controller!,
@@ -118,13 +128,13 @@ class DefaultTextFormField extends StatelessWidget {
           border: const OutlineInputBorder(),
           contentPadding: EdgeInsets.symmetric(vertical: height),
           labelText: labelText,
-          prefixIcon:prefix != null
+          prefixIcon: prefix != null
               ? IconButton(
-            icon: Icon(prefix),
-            onPressed: () {
-              showPassword;
-            },
-          )
+                  icon: Icon(prefix),
+                  onPressed: () {
+                    showPassword;
+                  },
+                )
               : null,
           suffixIcon: suffix != null
               ? IconButton(
